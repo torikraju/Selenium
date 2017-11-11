@@ -1,8 +1,8 @@
-package com.torikraju.ExceptionHandling;
+package com.torikraju.Core_Java.ExceptionHandling;
 
 import org.junit.Test;
 
-public class BasicExceptonHandle {
+public class ArithmeticExceptionHandle {
 
     @Test
     public void ArithmeticExceptionHandling() {
