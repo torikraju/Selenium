@@ -11,7 +11,7 @@ public class Writing_Txt_File {
 
     private String location;
     private File file;
-    private  FileWriter fileWriter;
+    private FileWriter fileWriter;
     private BufferedWriter bufferedWriter;
     private Random rand;
 

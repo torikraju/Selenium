@@ -41,7 +41,6 @@ public class Writing_Properties_Files {
     }
 
 
-
     @After
     public void closeFile() throws IOException {
         outputStream.close();
