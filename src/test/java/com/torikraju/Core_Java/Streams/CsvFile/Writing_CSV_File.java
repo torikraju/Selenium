@@ -18,7 +18,7 @@ public class Writing_CSV_File {
 
     @Before
     public void setUp() throws IOException {
-        location = "resources/Files/Default.csv";
+        location = "resources/Files/Select.csv";
         file = new File(location);
         fileWriter = new FileWriter(file, true);
         bufferedWriter = new BufferedWriter(fileWriter);

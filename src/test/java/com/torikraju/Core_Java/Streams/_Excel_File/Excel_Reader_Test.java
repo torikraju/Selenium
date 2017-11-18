@@ -1,4 +1,4 @@
-package com.torikraju.Core_Java.Streams.Excel_File;
+package com.torikraju.Core_Java.Streams._Excel_File;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.After;
@@ -24,7 +24,7 @@ public class Excel_Reader_Test {
 
         String sheetName = "authentication";
 
-        Excel_Reader reader = new Excel_Reader(location);
+        _Excel_Reader reader = new _Excel_Reader(location);
 
         System.out.println("Row Count: " + reader.getRowCount(sheetName));
         System.out.println("Column Count: " + reader.getColumnCount(sheetName));
@@ -34,7 +34,13 @@ public class Excel_Reader_Test {
         System.out.println("Get cellData: " + reader.getCellData(sheetName, "Email", 2));
 
         //reader.addSheet("test");
-       // reader.removeSheet("test");
+        // reader.removeSheet("test");
+
+        System.out.println(reader.setCellData(sheetName, "Password", 3, "imat0rik"));
+
+        //System.out.println(reader.addColumn(sheetName, "Test_new"));
+       // System.out.println(reader.removeColumn(sheetName, 4));
+
 
 
     }

@@ -18,7 +18,7 @@ public class Writing_Txt_File {
 
     @Before
     public void setUp() throws IOException {
-        location = "resources/Files/Default.txt";
+        location = "resources/Files/Select.txt";
         file = new File(location);
         fileWriter = new FileWriter(file, true);
         bufferedWriter = new BufferedWriter(fileWriter);

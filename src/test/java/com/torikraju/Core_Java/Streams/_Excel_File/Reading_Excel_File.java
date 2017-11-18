@@ -1,4 +1,4 @@
-package com.torikraju.Core_Java.Streams.Excel_File;
+package com.torikraju.Core_Java.Streams._Excel_File;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
@@ -21,7 +21,7 @@ public class Reading_Excel_File {
 
     @Before
     public void setUp() throws IOException, InvalidFormatException {
-        location = "resources/Files/Default.xlsx";
+        location = "resources/Files/Select.xlsx";
         file = new File(location);
         inputStream = new FileInputStream(file);
         workbook = WorkbookFactory.create(inputStream);

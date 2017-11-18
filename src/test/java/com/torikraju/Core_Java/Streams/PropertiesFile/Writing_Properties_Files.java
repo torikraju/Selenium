@@ -17,7 +17,7 @@ public class Writing_Properties_Files {
 
     @Before
     public void setUp() throws FileNotFoundException {
-        location = "resources/Files/Default.properties";
+        location = "resources/Files/Select.properties";
         properties = new Properties();
         outputStream = new FileOutputStream(location, true);
         file = new File(location);

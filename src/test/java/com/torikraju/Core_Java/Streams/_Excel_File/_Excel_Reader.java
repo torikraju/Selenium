@@ -1,17 +1,14 @@
-package com.torikraju.Core_Java.Streams.Excel_File;
+package com.torikraju.Core_Java.Streams._Excel_File;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.*;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Calendar;
 
-public class Excel_Reader {
+public class _Excel_Reader {
 
     private String path;
     private FileInputStream inputStream;
@@ -21,7 +18,7 @@ public class Excel_Reader {
     private XSSFRow row;
     private XSSFCell cell;
 
-    public Excel_Reader(String path) {
+    public _Excel_Reader(String path) {
         this.path = path;
         try {
             inputStream = new FileInputStream(path);
@@ -211,6 +208,123 @@ public class Excel_Reader {
             fileOut = new FileOutputStream(path);
             workbook.write(fileOut);
             fileOut.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    // returns true if data is set successfully else false
+    public boolean setCellData(String sheetName, String colName, int rowNum, String data) {
+
+        try {
+            inputStream = new FileInputStream(path);
+            workbook = new XSSFWorkbook(inputStream);
+
+            if (rowNum <= 0)
+                return false;
+
+            int index = workbook.getSheetIndex(sheetName);
+            int colNum = -1;
+            if (index == -1)
+                return false;
+
+
+            sheet = workbook.getSheetAt(index);
+
+            row = sheet.getRow(0);
+            for (int i = 0; i < row.getLastCellNum(); i++) {
+
+                if (row.getCell(i).getStringCellValue().trim().equalsIgnoreCase(colName))
+                    colNum = i;
+            }
+
+            if (colNum == -1)
+                return false;
+            sheet.autoSizeColumn(colNum);
+            row = sheet.getRow(rowNum - 1);
+            if (row == null)
+                row = sheet.createRow(rowNum - 1);
+
+            cell = row.getCell(colNum);
+            if (cell == null)
+                cell = row.createCell(colNum);
+
+            cell.setCellValue(data);
+            XSSFCreationHelper createHelper = workbook.getCreationHelper();
+
+
+            fileOutputStream = new FileOutputStream(path);
+            workbook.write(fileOutputStream);
+
+            fileOutputStream.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    // returns true if column is created successfully
+    public boolean addColumn(String sheetName, String colName) {
+
+        try {
+            inputStream = new FileInputStream(path);
+            workbook = new XSSFWorkbook(inputStream);
+            int index = workbook.getSheetIndex(sheetName);
+            if (index == -1)
+                return false;
+
+
+            sheet = workbook.getSheetAt(index);
+
+            row = sheet.getRow(0);
+            if (row == null)
+                row = sheet.createRow(0);
+
+
+            if (row.getLastCellNum() == -1)
+                cell = row.createCell(0);
+            else
+                cell = row.createCell(row.getLastCellNum());
+
+            cell.setCellValue(colName);
+
+            fileOutputStream = new FileOutputStream(path);
+            workbook.write(fileOutputStream);
+            fileOutputStream.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    // removes a column and all the contents
+    public boolean removeColumn(String sheetName, int colNum) {
+        try {
+            if (!isSheetExist(sheetName))
+                return false;
+            inputStream = new FileInputStream(path);
+            workbook = new XSSFWorkbook(inputStream);
+            sheet = workbook.getSheet(sheetName);
+            XSSFCreationHelper createHelper = workbook.getCreationHelper();
+
+            for (int i = 0; i < getRowCount(sheetName); i++) {
+                row = sheet.getRow(i);
+                if (row != null) {
+                    cell = row.getCell(colNum);
+                    if (cell != null) {
+                        row.removeCell(cell);
+                    }
+                }
+            }
+            fileOutputStream = new FileOutputStream(path);
+            workbook.write(fileOutputStream);
+            fileOutputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
             return false;

@@ -18,7 +18,7 @@ public class Reading_Properties_Files {
 
     @Before
     public void setUp() throws FileNotFoundException {
-        location = "resources/Files/Default.properties";
+        location = "resources/Files/Select.properties";
         properties = new Properties();
         inputStream = new FileInputStream(location);
     }

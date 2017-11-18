@@ -1,4 +1,4 @@
-package com.torikraju.Core_Java.Streams.Excel_File;
+package com.torikraju.Core_Java.Streams._Excel_File;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -21,7 +21,7 @@ public class Writing_Excel_File {
 
     @Before
     public void setUp() throws IOException {
-        location = "resources/Files/Default.xlsx";
+        location = "resources/Files/Select.xlsx";
 
     }
 

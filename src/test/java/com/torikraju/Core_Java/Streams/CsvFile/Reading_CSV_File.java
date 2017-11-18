@@ -18,7 +18,7 @@ public class Reading_CSV_File {
 
     @Before
     public void setUp() throws IOException {
-        location = "resources/Files/Default.csv";
+        location = "resources/Files/Select.csv";
     }
 
 

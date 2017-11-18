@@ -15,7 +15,7 @@ public class Reading_Txt_File {
 
     @Before
     public void setUp() throws IOException {
-        location = "resources/Files/Default.txt";
+        location = "resources/Files/Select.txt";
     }
 
 
