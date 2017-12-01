@@ -1,6 +1,6 @@
 package com.torikraju.Selenium.Default;
 
-import com.torikraju.Selenium.webDreiverControl.WebDriverControl;
+import WebDriverSetup.WebDriverSetup;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -13,7 +13,7 @@ public class Default {
 
     @Before
     public void setup() {
-        driver = new WebDriverControl().intialization("firefox");
+        driver = new WebDriverSetup().intialization("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }

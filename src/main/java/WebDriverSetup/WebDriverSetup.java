@@ -10,10 +10,10 @@ public class WebDriverSetup {
 
     public WebDriver intialization(String browserName) {
         if (browserName.equalsIgnoreCase("Firefox")) {
-            System.setProperty("webdriver.gecko.driver", "resources/drivers/geckodriver.exe");
+            System.setProperty("webdriver.gecko.driver", "resources/drivers/geckodriver");
             webDriver = new FirefoxDriver();
         } else if (browserName.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "resources/drivers/geckodriver.exe");
+            System.setProperty("webdriver.chrome.driver", "resources/drivers/chromedriver");
             webDriver = new ChromeDriver();
         } else {
             System.out.println("browserName = [" + browserName + "] is not valid");

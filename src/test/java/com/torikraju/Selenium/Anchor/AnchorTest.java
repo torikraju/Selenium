@@ -1,6 +1,6 @@
 package com.torikraju.Selenium.Anchor;
 
-import com.torikraju.Selenium.webDreiverControl.WebDriverControl;
+import WebDriverSetup.WebDriverSetup;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +16,7 @@ public class AnchorTest {
 
     @Before
     public void setup() {
-        driver = new WebDriverControl().intialization("firefox");
+        driver = new WebDriverSetup().intialization("chrome");
 
     }
 

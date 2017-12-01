@@ -1,6 +1,6 @@
 package com.torikraju.Selenium.Javascript;
 
-import com.torikraju.Selenium.webDreiverControl.WebDriverControl;
+import WebDriverSetup.WebDriverSetup;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +19,7 @@ public class handle_Javascript {
 
     @Before
     public void setup() {
-        driver = new WebDriverControl().intialization("firefox");
+        driver = new WebDriverSetup().intialization("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
