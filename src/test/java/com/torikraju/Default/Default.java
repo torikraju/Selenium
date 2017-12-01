@@ -13,12 +13,12 @@ public class Default {
     @Before
     public void init() {
 
-        driver = new WebDriverSetup().intialization("chrome");
+        driver = new WebDriverSetup().intialization("firefox");
     }
 
     @Test
     public void tests() {
-        System.out.printf("hello form default");
+
     }
 
     @After
