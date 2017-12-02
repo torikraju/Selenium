@@ -44,5 +44,14 @@ public class WebDriverHelper {
             return null;
         }
     }
+    public String getPhantomJsLocation() {
+        if (OS.startsWith("Linux")) {
+            return "resources/drivers/phantomjs";
+        } else if (OS.startsWith("Windows")) {
+            return "resources/drivers/phantomjs.exe";
+        } else {
+            return null;
+        }
+    }
 
 }

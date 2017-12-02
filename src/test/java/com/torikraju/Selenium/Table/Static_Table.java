@@ -24,7 +24,11 @@ public class Static_Table {
 
     @Test
     public void static_table_handle() {
-        driver.get("file:///C:/Git/Selenium_tutorial/resources/HTML/Table.html");
+
+        String htmlLocation = "file:"+System.getProperty("user.dir")+"/resources/HTML/Table.html";
+
+        driver.get(htmlLocation);
+
 
         WebElement table = driver.findElement(By.tagName("table"));
 

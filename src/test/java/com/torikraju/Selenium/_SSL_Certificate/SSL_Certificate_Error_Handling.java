@@ -7,7 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,10 +24,15 @@ public class SSL_Certificate_Error_Handling {
     @Test
     public void SSL_Certificate_Error_Handling_Test_firefox() throws Throwable {
 
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("acceptInsecureCerts",true);
+
 
         System.setProperty("webdriver.gecko.driver", new WebDriverHelper().getGeckoDriverLocation());
+
         FirefoxOptions firefoxOptions = new FirefoxOptions();
-        firefoxOptions.setCapability(CapabilityType.ACCEPT_SSL_CERTS, false);
+        firefoxOptions.addCapabilities(capabilities);
+
         driver = new FirefoxDriver(firefoxOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20L, TimeUnit.SECONDS);
@@ -32,12 +40,13 @@ public class SSL_Certificate_Error_Handling {
         driver.get("https://cacert.org/");
 
         Thread.sleep(2000);
+
         driver.close();
 
     }
 
     @Test
-    public void SSL_Certificate_Error_Handling_Test_chome() throws Throwable {
+    public void _SSL_Certificate_Error_Handling_Test_chome() throws Throwable {
 
         //  DesiredCapabilities capability = DesiredCapabilities.chrome();
         //  capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
@@ -46,8 +55,8 @@ public class SSL_Certificate_Error_Handling {
 
 
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-        driver = new ChromeDriver(chromeOptions);
+        //  chromeOptions.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+        driver = new ChromeDriver(/*chromeOptions*/);
 
 
         driver.manage().window().maximize();

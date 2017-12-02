@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class Default {
@@ -22,11 +23,13 @@ public class Default {
     @Test
     public void defaultTest() {
 
+
+
     }
 
     @After
     public void close() {
-        driver.close();
+        //driver.close();
     }
 
 
