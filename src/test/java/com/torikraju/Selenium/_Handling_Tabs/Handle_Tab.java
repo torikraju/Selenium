@@ -1,7 +1,7 @@
 package com.torikraju.Selenium._Handling_Tabs;
 
 
-import WebDriverSetup.WebDriverSetup;
+import WebDriverSetup.WebDriverHelper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class Handle_Tab {
 
     @Before
     public void setup() {
-        driver = new WebDriverSetup().intialization("chrome");
+        driver = new WebDriverHelper().intialization("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }

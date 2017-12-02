@@ -1,6 +1,6 @@
 package com.torikraju.Selenium.Table;
 
-import WebDriverSetup.WebDriverSetup;
+import WebDriverSetup.WebDriverHelper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,7 +17,7 @@ public class Static_Table {
 
     @Before
     public void setup() {
-        driver = new WebDriverSetup().intialization("chrome");
+        driver = new WebDriverHelper().intialization("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }

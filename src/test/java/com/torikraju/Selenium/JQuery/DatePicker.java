@@ -1,6 +1,6 @@
 package com.torikraju.Selenium.JQuery;
 
-import WebDriverSetup.WebDriverSetup;
+import WebDriverSetup.WebDriverHelper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +16,7 @@ public class DatePicker {
 
     @Before
     public void start() {
-        driver = new WebDriverSetup().intialization("chrome");
+        driver = new WebDriverHelper().intialization("chrome");
         driver.manage().window().maximize();
         this.datePickerFunction = new DatePickerFunction();
     }

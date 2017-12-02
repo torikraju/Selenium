@@ -1,6 +1,6 @@
 package com.torikraju.Selenium.JQuery;
 
-import WebDriverSetup.WebDriverSetup;
+import WebDriverSetup.WebDriverHelper;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -23,7 +23,7 @@ public class DragAndDrop {
 
     @Before
     public void init() {
-        driver = new WebDriverSetup().intialization("chrome");
+        driver = new WebDriverHelper().intialization("chrome");
         driver.manage().window().maximize();
 
     }

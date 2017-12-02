@@ -39,8 +39,7 @@ public class Excel_Reader_Test {
         System.out.println(reader.setCellData(sheetName, "Password", 3, "imat0rik"));
 
         //System.out.println(reader.addColumn(sheetName, "Test_new"));
-       // System.out.println(reader.removeColumn(sheetName, 4));
-
+        // System.out.println(reader.removeColumn(sheetName, 4));
 
 
     }

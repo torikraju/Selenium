@@ -1,6 +1,6 @@
 package com.torikraju.Selenium.JQuery;
 
-import WebDriverSetup.WebDriverSetup;
+import WebDriverSetup.WebDriverHelper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +19,7 @@ public class Move_Slider {
 
     @Before
     public void init() {
-        this.driver = new WebDriverSetup().intialization("chrome");
+        this.driver = new WebDriverHelper().intialization("chrome");
         this.driver.manage().window().maximize();
         this.helperClass = new HelperClass();
 

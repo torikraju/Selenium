@@ -10,9 +10,9 @@ import java.util.Calendar;
 
 public class _Excel_Reader {
 
+    public FileOutputStream fileOutputStream;
     private String path;
     private FileInputStream inputStream;
-    public FileOutputStream fileOutputStream;
     private XSSFWorkbook workbook;
     private XSSFSheet sheet;
     private XSSFRow row;
