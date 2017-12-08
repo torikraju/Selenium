@@ -20,7 +20,7 @@ public class DatePickerFunction {
     private String calYear = null;
     private boolean dateNotFound;
 
-    public DatePickerFunction() {
+    DatePickerFunction() {
         this.monthList = Arrays.asList(
                 "January", "February", "March", "April",
                 "May", "June", "July", "August",
@@ -58,7 +58,7 @@ public class DatePickerFunction {
         }
     }
 
-    public void selectDate(int date, WebDriver driver) {
+    private void selectDate(int date, WebDriver driver) {
         WebElement datePicker = driver.findElement(By.id("ui-datepicker-div"));
         List<WebElement> noOfColumns = datePicker.findElements(By.tagName("td"));
 

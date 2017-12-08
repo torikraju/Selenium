@@ -6,9 +6,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverHelper {
 
+    private String OS = System.getProperty("os.name");
     private WebDriver webDriver;
-
-    String OS = System.getProperty("os.name");
 
     public WebDriver intialization(String browserName) {
 
@@ -44,6 +43,7 @@ public class WebDriverHelper {
             return null;
         }
     }
+
     public String getPhantomJsLocation() {
         if (OS.startsWith("Linux")) {
             return "resources/drivers/phantomjs";

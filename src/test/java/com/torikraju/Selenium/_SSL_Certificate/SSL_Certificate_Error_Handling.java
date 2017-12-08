@@ -7,9 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.internal.ProfilesIni;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.concurrent.TimeUnit;
@@ -25,7 +22,7 @@ public class SSL_Certificate_Error_Handling {
     public void SSL_Certificate_Error_Handling_Test_firefox() throws Throwable {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("acceptInsecureCerts",true);
+        capabilities.setCapability("acceptInsecureCerts", true);
 
 
         System.setProperty("webdriver.gecko.driver", new WebDriverHelper().getGeckoDriverLocation());

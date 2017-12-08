@@ -1,35 +1,35 @@
 package com.torikraju.Selenium.Default;
 
-import WebDriverSetup.WebDriverHelper;
+import Framework.Helper.Selenium_framework;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-
-import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 public class Default {
 
-    private WebDriver driver;
+    private Selenium_framework s;
+
+    public Default() {
+        this.s = new Selenium_framework();
+    }
 
     @Before
     public void setup() {
-        driver = new WebDriverHelper().intialization("firefox");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        s.setup();
     }
 
     @Test
     public void defaultTest() {
-
+        s.browseURL("http://www.baeldung.com/thymeleaf-in-spring-mvc");
+        System.out.println();
+        //class name
 
 
     }
 
     @After
     public void close() {
-        //driver.close();
+        s.close();
     }
 
 

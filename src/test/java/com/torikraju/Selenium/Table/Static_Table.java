@@ -25,7 +25,7 @@ public class Static_Table {
     @Test
     public void static_table_handle() {
 
-        String htmlLocation = "file:"+System.getProperty("user.dir")+"/resources/HTML/Table.html";
+        String htmlLocation = "file:" + System.getProperty("user.dir") + "/resources/HTML/Table.html";
 
         driver.get(htmlLocation);
 

@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
  * Created by torikul on 11/23/2017.
  */
 public class DatePicker {
-    WebDriver driver;
+    private WebDriver driver;
     private DatePickerFunction datePickerFunction;
 
 
@@ -22,7 +22,7 @@ public class DatePicker {
     }
 
     @Test
-    public void date_picker_test() throws InterruptedException {
+    public void date_picker_test() throws Throwable {
         driver.get("http://www.aorank.com/tutorial/jquery-datepicker-example/cal.html");
         datePickerFunction.setDate(driver, "//input[@id='datepicker']", 18, 8, 2013);
 
