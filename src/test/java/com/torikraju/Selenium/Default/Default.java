@@ -20,8 +20,7 @@ public class Default {
 
     @Test
     public void defaultTest() {
-        s.browseURL("http://www.baeldung.com/thymeleaf-in-spring-mvc");
-        System.out.println();
+        s.browseLocalHTML("resources/HTML/Table.html");
         //class name
 
 

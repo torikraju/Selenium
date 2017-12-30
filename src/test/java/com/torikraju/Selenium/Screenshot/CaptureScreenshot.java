@@ -1,4 +1,4 @@
-package com.torikraju.Screenshot;
+package com.torikraju.Selenium.Screenshot;
 
 import WebDriverSetup.WebDriverHelper;
 import org.apache.commons.io.FileUtils;

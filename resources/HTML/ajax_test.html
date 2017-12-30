@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Ajax Test</title>
+</head>
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="container">
+    <form>
+        <p>
+            <label>
+                <input type="radio" id="yes" name="name" value="Yes"> Yes
+            </label>
+            <label>
+                <input type="radio" id="no" name="name" value="No"> No
+            </label>
+        </p>
+        <p>
+            <input type="reset" value="Reset">
+            <input type="submit" id="buttoncheck" value="Check">
+        </p>
+        <p class="radiobutton"></p>
+    </form>
+</div>
+<script>
+    $('#buttoncheck').click(function () {
+        if ($("input[name='name']").is(':checked')) {
+            //deliberately delaying the function for checking
+            setTimeout(function () {
+                $('.radiobutton').html("<div class='torik'>Radio button is checked and it's value is " + $("input[name='name']:checked").val()+"</div>")
+              //  $('.radiobutton').html('<div class='torik'>Radio button is checked</div>')
+            }, 5000);
+        }
+        else {
+            $('.radiobutton').html('Radio button is Not checked')
+        }
+        // return false  use as per you need
+        return false;
+    })
+
+
+</script>
+</body>
+</html>

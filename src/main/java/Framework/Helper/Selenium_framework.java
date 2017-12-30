@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -66,6 +68,21 @@ public class Selenium_framework {
             driver.get(url);
         }
     }
+
+    public void browseLocalHTML(String relativePath) {
+        String htmlLocation = "file:" + System.getProperty("user.dir") + "/" + relativePath;
+        driver.manage().window().maximize();
+        waitNSecond(5);
+        driver.get(htmlLocation);
+    }
+
+    public void browseLocalHTML(String relativePath, int waitTime) {
+        String htmlLocation = "file:" + System.getProperty("user.dir") + "/" + relativePath;
+        driver.manage().window().maximize();
+        waitNSecond(waitTime);
+        driver.get(htmlLocation);
+    }
+
 
     public void waitNSecond(int n) {
         driver.manage().timeouts().implicitlyWait(n, SECONDS);
@@ -236,6 +253,7 @@ public class Selenium_framework {
             return null;
         }
     }
+
 
 
 }
